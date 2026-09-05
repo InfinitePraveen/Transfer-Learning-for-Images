@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Results - Transfer Learning for Images{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-4">Prediction Results</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-image"></i> Uploaded Image</h5>
+            </div>
+            <div class="card-body text-center">
+                <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded image"
+                    class="img-fluid rounded shadow-sm" style="max-height: 400px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-bar"></i> Prediction Results</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <h2 class="display-4 text-primary">{{ class_name }}</h2>
+                    <p class="text-muted">Predicted Class</p>
+                    <div class="confidence-display">
+                        <h1 class="display-1 font-weight-bold text-success">
+                            {{ "%.2f"|format(confidence) }}%
+                        </h1>
+                        <p class="text-muted">Confidence</p>
+                    </div>
+                </div>
+
+                <div class="model-info text-center mb-4">
+                    <span class="badge badge-info badge-lg">
+                        Model: {{ model_name.upper() }}
+                    </span>
+                </div>
+
+                <h5>Top Predictions:</h5>
+                <div class="predictions-list">
+                    {% for cls, prob in all_probs.items() %}
+                    {% if loop.index <= 5 %} <div class="prediction-item mb-2">
+                        <div class="d-flex justify-content-between">
+                            <span>{{ cls }}</span>
+                            <span>{{ "%.2f"|format(prob) }}%</span>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar {% if loop.index == 1 %}bg-success{% else %}bg-info{% endif %}"
+                                role="progressbar" style="width: {{ prob }}%;" aria-valuenow="{{ prob }}"
+                                aria-valuemin="0" aria-valuemax="100">
+                                {{ "%.1f"|format(prob) }}%
+                            </div>
+                        </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-upload"></i> Upload Another Image
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body text-center">
+                <h5>Not satisfied with the results?</h5>
+                <p class="text-muted">Try these tips:</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item">• Use a clearer image</li>
+                    <li class="list-inline-item">• Try the other model</li>
+                    <li class="list-inline-item">• Center the flower better</li>
+                    <li class="list-inline-item">• Use better lighting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}
