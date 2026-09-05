@@ -1,0 +1,54 @@
+<footer class="footer mt-auto py-4 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Transfer Learning for Images</h5>
+                <p class="text-muted">
+                    Fine-tuning VGG16 and ResNet50 for custom image classification tasks using PyTorch.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="text-white mr-3"
+                        title="LinkedIn Profile">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/your-github-profile" target="_blank" class="text-white"
+                        title="GitHub Profile">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url_for('predict') }}" class="text-muted">Make a Prediction</a></li>
+                    <li><a href="{{ url_for('gallery') }}" class="text-muted">View Gallery</a></li>
+                    <li><a href="{{ url_for('documentation') }}" class="text-muted">Documentation</a></li>
+                    <li><a href="{{ url_for('faq') }}" class="text-muted">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Legal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url_for('privacy') }}" class="text-muted">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('terms') }}" class="text-muted">Terms of Service</a></li>
+                    <li><a href="{{ url_for('team') }}" class="text-muted">Our Team</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="text-muted">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="bg-secondary">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="text-muted mb-0">
+                    &copy; 2024 Transfer Learning for Images. All rights reserved.
+                    <br>
+                    Developed with <i class="fas fa-heart text-danger"></i> using PyTorch and Flask
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
