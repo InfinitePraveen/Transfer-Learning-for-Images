@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Transfer Learning for Images{% endblock %}
+
+{% block description %}Transfer learning for image classification using VGG16 and ResNet50 with PyTorch{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid bg-gradient-primary text-white rounded-lg shadow-lg">
+    <div class="container py-5">
+        <h1 class="display-4 font-weight-bold">Transfer Learning for Images</h1>
+        <p class="lead">
+            Fine-tune state-of-the-art deep learning models (VGG16 & ResNet50) for custom image classification tasks.
+        </p>
+        <hr class="my-4 bg-white">
+        <p>
+            Upload an image and let our pretrained models classify it among 102 different flower species using transfer
+            learning techniques.
+        </p>
+        <div class="mt-4">
+            <a href="{{ url_for('predict') }}" class="btn btn-light btn-lg mr-3">
+                <i class="fas fa-upload"></i> Try It Now
+            </a>
+            <a href="{{ url_for('documentation') }}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-book"></i> Learn More
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Transfer Learning</h5>
+                <p class="card-text">
+                    Leverage pretrained models on ImageNet to achieve high accuracy with limited training data.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Multiple Models</h5>
+                <p class="card-text">
+                    Choose between VGG16 and ResNet50 architectures, each fine-tuned for optimal performance.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">High Accuracy</h5>
+                <p class="card-text">
+                    Achieve state-of-the-art results on the Oxford 102 Flower Dataset with our fine-tuned models.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">Sample Predictions</h2>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='images/sample_1.jpg') }}" class="card-img-top" alt="Sample 1">
+            <div class="card-body text-center">
+                <p class="card-text">Sample Flower 1</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='images/sample_2.jpg') }}" class="card-img-top" alt="Sample 2">
+            <div class="card-body text-center">
+                <p class="card-text">Sample Flower 2</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='images/sample_3.jpg') }}" class="card-img-top" alt="Sample 3">
+            <div class="card-body text-center">
+                <p class="card-text">Sample Flower 3</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='images/sample_4.jpg') }}" class="card-img-top" alt="Sample 4">
+            <div class="card-body text-center">
+                <p class="card-text">Sample Flower 4</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card bg-light shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center">How It Works</h3>
+                <div class="row mt-4">
+                    <div class="col-md-3 text-center">
+                        <div class="step-number">1</div>
+                        <h5>Upload</h5>
+                        <p class="text-muted">Upload your image</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="step-number">2</div>
+                        <h5>Process</h5>
+                        <p class="text-muted">Model analyzes the image</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="step-number">3</div>
+                        <h5>Classify</h5>
+                        <p class="text-muted">Identify the flower species</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="step-number">4</div>
+                        <h5>Results</h5>
+                        <p class="text-muted">View predictions with confidence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
