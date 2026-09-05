@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Service - Transfer Learning for Images{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="text-center mb-4">Terms of Service</h1>
+        <p class="text-muted text-center">Last updated: January 2024</p>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>
+                    By accessing and using this application, you agree to be bound by these Terms of Service.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h3>2. Use License</h3>
+                <p>
+                    This project is licensed under the MIT License. You are free to use, modify, and distribute the
+                    software, subject to the license terms.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h3>3. User Responsibilities</h3>
+                <ul>
+                    <li>Do not upload malicious or harmful content</li>
+                    <li>Do not attempt to breach security measures</li>
+                    <li>Use the application for lawful purposes only</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h3>4. Disclaimer</h3>
+                <p>
+                    The application is provided "as is" without warranties of any kind. Model predictions may not always
+                    be accurate.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3>5. Contact</h3>
+                <p>
+                    For questions about these terms, please visit our <a href="{{ url_for('contact') }}">contact
+                        page</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
