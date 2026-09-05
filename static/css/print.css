@@ -1,0 +1,112 @@
+/* 
+* Print Styles for Transfer Learning for Images
+*/
+
+@media print {
+
+    /* Hide navigation and footer */
+    .navbar,
+    .footer,
+    .no-print,
+    .btn,
+    .action-buttons,
+    .social-links {
+        display: none !important;
+    }
+
+    /* Reset body styles */
+    body {
+        background: white;
+        font-size: 12pt;
+        line-height: 1.5;
+        color: black;
+    }
+
+    /* Remove shadows and borders */
+    .card,
+    .shadow-sm,
+    .shadow-lg {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+
+    /* Ensure cards don't break across pages */
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Full width for all containers */
+    .container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Adjust headings */
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 20pt;
+    }
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Print colors */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    /* Show links after text */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+        color: #666;
+    }
+
+    /* Don't show link URLs for navigation */
+    .nav-link[href]:after,
+    .navbar-brand[href]:after {
+        content: "";
+    }
+
+    /* Ensure backgrounds print */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Page margins */
+    @page {
+        margin: 2cm;
+    }
+
+    /* Ensure progress bars are visible */
+    .progress {
+        background: #e9ecef !important;
+        border: 1px solid #ddd;
+    }
+
+    .progress-bar {
+        background: #007bff !important;
+        color: white !important;
+        print-color-adjust: exact;
+    }
+
+    /* Hide animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
