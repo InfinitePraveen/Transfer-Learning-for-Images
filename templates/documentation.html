@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}Documentation - Transfer Learning for Images{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-4">Documentation</h1>
+        <p class="text-center text-muted">
+            Complete documentation for using the Transfer Learning for Images application
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 mb-4">
+        <div class="card shadow-sm sticky-top" style="top: 80px;">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Table of Contents</h5>
+            </div>
+            <div class="card-body p-0">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#getting-started">Getting Started</a>
+                    <a class="nav-link" href="#installation">Installation</a>
+                    <a class="nav-link" href="#usage">Usage Guide</a>
+                    <a class="nav-link" href="#api">API Reference</a>
+                    <a class="nav-link" href="#models">Models</a>
+                    <a class="nav-link" href="#dataset">Dataset</a>
+                    <a class="nav-link" href="#troubleshooting">Troubleshooting</a>
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9">
+        <section id="getting-started" class="doc-section">
+            <h2>Getting Started</h2>
+            <p>
+                This application allows you to classify flower images using transfer learning with
+                VGG16 and ResNet50 models fine-tuned on the Oxford 102 Flower Dataset.
+            </p>
+        </section>
+
+        <section id="installation" class="doc-section">
+            <h2>Installation</h2>
+            <h4>Prerequisites</h4>
+            <ul>
+                <li>Python 3.7 or higher</li>
+                <li>pip package manager</li>
+                <li>Git (optional)</li>
+            </ul>
+
+            <h4>Steps</h4>
+            <pre class="bg-light p-3 rounded"><code>git clone https://github.com/your-username/transfer-learning-images.git
+cd transfer-learning-images
+pip install -r requirements.txt</code></pre>
+        </section>
+
+        <section id="usage" class="doc-section">
+            <h2>Usage Guide</h2>
+            <h4>Running the Application</h4>
+            <pre class="bg-light p-3 rounded"><code>python app.py</code></pre>
+            <p>Open your browser and navigate to <code>http://localhost:5000</code></p>
+
+            <h4>Making Predictions</h4>
+            <ol>
+                <li>Click on "Predict" in the navigation menu</li>
+                <li>Upload an image (JPG, JPEG, or PNG)</li>
+                <li>Select a model (VGG16 or ResNet50)</li>
+                <li>Click "Predict" to see results</li>
+            </ol>
+        </section>
+
+        <section id="api" class="doc-section">
+            <h2>API Reference</h2>
+            <h4>Endpoints</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>Method</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/</code></td>
+                        <td>GET</td>
+                        <td>Home page</td>
+                    </tr>
+                    <tr>
+                        <td><code>/predict</code></td>
+                        <td>GET, POST</td>
+                        <td>Upload and predict image</td>
+                    </tr>
+                    <tr>
+                        <td><code>/gallery</code></td>
+                        <td>GET</td>
+                        <td>View example predictions</td>
+                    </tr>
+                    <tr>
+                        <td><code>/documentation</code></td>
+                        <td>GET</td>
+                        <td>View documentation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="models" class="doc-section">
+            <h2>Models</h2>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4>VGG16</h4>
+                    <p>16-layer deep convolutional neural network</p>
+                    <ul>
+                        <li>Input size: 224x224x3</li>
+                        <li>Parameters: 138 million</li>
+                        <li>Pre-trained on: ImageNet</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4>ResNet50</h4>
+                    <p>50-layer residual network</p>
+                    <ul>
+                        <li>Input size: 224x224x3</li>
+                        <li>Parameters: 25 million</li>
+                        <li>Pre-trained on: ImageNet</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="dataset" class="doc-section">
+            <h2>Dataset</h2>
+            <p>
+                The models are trained on the Oxford 102 Flower Dataset, which includes 8,189 images
+                spanning 102 flower categories.
+            </p>
+            <h4>Dataset Statistics</h4>
+            <ul>
+                <li>Training images: 1,020 (10 per class)</li>
+                <li>Validation images: 1,020 (10 per class)</li>
+                <li>Test images: 6,149 (remaining)</li>
+            </ul>
+        </section>
+
+        <section id="troubleshooting" class="doc-section">
+            <h2>Troubleshooting</h2>
+            <h4>Common Issues</h4>
+            <div class="alert alert-warning">
+                <strong>File upload fails:</strong> Check that the file is JPG/PNG and under 5MB
+            </div>
+            <div class="alert alert-warning">
+                <strong>Slow predictions:</strong> First prediction may be slow as models load into memory
+            </div>
+            <div class="alert alert-warning">
+                <strong>CUDA errors:</strong> The app will automatically fall back to CPU if GPU is unavailable
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .doc-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .doc-section h2 {
+        color: #007bff;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+</style>
+{% endblock %}
