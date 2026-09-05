@@ -1,0 +1,36 @@
+# # Data
+# data/
+# *.h5
+# *.pth
+# *.onnx
+
+# Virtual environments
+venv/
+env/
+.venv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+*.sqlite3
+
+# Logs
+*.log
+
+# Uploads (keep .gitkeep)
+static/uploads/*
+!static/uploads/.gitkeep
