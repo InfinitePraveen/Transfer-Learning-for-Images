@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}About - Transfer Learning for Images{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-4">About This Project</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow-lg mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Project Overview</h2>
+                <p class="card-text">
+                    This project demonstrates the power of transfer learning for image classification tasks.
+                    We fine-tune two state-of-the-art deep learning models (VGG16 and ResNet50) on the
+                    Oxford 102 Flower Dataset to create an accurate flower classification system.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-lg mb-4">
+            <div class="card-body">
+                <h2 class="card-title">What is Transfer Learning?</h2>
+                <p class="card-text">
+                    Transfer learning is a machine learning technique where a model developed for one task
+                    is reused as the starting point for a model on a second task. In our case, we use models
+                    pretrained on ImageNet (1.4 million images, 1000 classes) and adapt them for flower
+                    classification.
+                </p>
+                <div class="text-center my-4">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Transfer Learning"
+                        class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-lg mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Models Used</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>VGG16</h4>
+                        <ul>
+                            <li>16 layers deep</li>
+                            <li>138 million parameters</li>
+                            <li>Simple architecture</li>
+                            <li>High accuracy on ImageNet</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>ResNet50</h4>
+                        <ul>
+                            <li>50 layers deep</li>
+                            <li>25 million parameters</li>
+                            <li>Residual connections</li>
+                            <li>State-of-the-art performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-lg mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Dataset</h2>
+                <p class="card-text">
+                    We use the <strong>Oxford 102 Flower Dataset</strong>, which contains:
+                </p>
+                <ul>
+                    <li>8,189 images of flowers</li>
+                    <li>102 different flower categories</li>
+                    <li>Each class has 40-258 images</li>
+                    <li>Images have large scale, pose, and light variations</li>
+                </ul>
+                <p class="card-text mt-3">
+                    <a href="https://www.robots.ox.ac.uk/~vgg/data/flowers/102/" target="_blank"
+                        class="btn btn-outline-primary">
+                        <i class="fas fa-external-link-alt"></i> Learn More About the Dataset
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h2 class="card-title">Technologies Used</h2>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3">
+                        <i class="fab fa-python fa-3x text-primary"></i>
+                        <h5>Python</h5>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-fire fa-3x text-danger"></i>
+                        <h5>PyTorch</h5>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-flask fa-3x text-info"></i>
+                        <h5>Flask</h5>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                        <h5>Bootstrap</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
