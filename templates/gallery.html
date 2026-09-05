@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Transfer Learning for Images{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-4">Prediction Gallery</h1>
+        <p class="text-center text-muted">
+            Examples of model predictions on various flower images
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="btn-group" role="group" aria-label="Filter gallery">
+            <button type="button" class="btn btn-outline-primary active filter-btn" data-filter="all">All</button>
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="correct">Correct
+                Predictions</button>
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="incorrect">Incorrect
+                Predictions</button>
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="high-confidence">High
+                Confidence</button>
+        </div>
+    </div>
+</div>
+
+<div class="row gallery-grid">
+    {% for i in range(1, 10) %}
+    <div class="col-md-4 mb-4 gallery-item" data-category="correct">
+        <div class="card shadow-sm h-100">
+            <img src="{{ url_for('static', filename='images/gallery_' ~ ((i-1) % 3 + 1) ~ '.jpg') }}"
+                class="card-img-top" alt="Gallery image {{ i }}">
+            <div class="card-body">
+                <h6 class="card-title">Sample Image {{ i }}</h6>
+                <p class="card-text mb-1">
+                    <span class="badge badge-success">Correct</span>
+                    <span class="badge badge-info">Confidence: 95%</span>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        Predicted: Flower Type {{ i }}
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row mt-4">
+    <div class="col-12 text-center">
+        <p class="text-muted">
+            More examples coming soon! Upload your own images to see predictions.
+        </p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-upload"></i> Upload Your Image
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}
