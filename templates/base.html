@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="{% block description %}Transfer Learning for Image Classification - Fine-tune VGG16 and ResNet50 on custom datasets{% endblock %}">
+    <meta name="keywords"
+        content="transfer learning, deep learning, image classification, VGG16, ResNet50, PyTorch, Flask">
+    <meta name="author" content="Your Name">
+
+    <title>{% block title %}Transfer Learning for Images{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animation.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    {% include '_navbar.html' %}
+
+    <main class="container mt-4 mb-5">
+        {% include '_flash_messages.html' %}
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include '_footer.html' %}
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>
