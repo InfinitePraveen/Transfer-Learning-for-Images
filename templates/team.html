@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Team - Transfer Learning for Images{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-4">Our Team</h1>
+        <p class="text-center text-muted">
+            Meet the people behind this project
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <img src="{{ url_for('static', filename='images/team_1.jpg') }}"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="Team Member"
+                style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">Your Name</h5>
+                <p class="text-muted">Lead Developer</p>
+                <p class="card-text">
+                    Machine Learning Engineer specializing in deep learning and computer vision.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/your-username" target="_blank" class="btn btn-outline-dark btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank"
+                        class="btn btn-outline-primary btn-sm">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <img src="{{ url_for('static', filename='images/team_2.jpg') }}"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="Team Member"
+                style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">Contributor Name</h5>
+                <p class="text-muted">Data Scientist</p>
+                <p class="card-text">
+                    Expert in transfer learning and model optimization techniques.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="btn btn-outline-dark btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm text-center h-100">
+            <img src="{{ url_for('static', filename='images/team_3.jpg') }}"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="Team Member"
+                style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">Advisor Name</h5>
+                <p class="text-muted">Project Advisor</p>
+                <p class="card-text">
+                    Professor of Computer Science with expertise in artificial intelligence.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="btn btn-outline-dark btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body text-center">
+                <h4>Want to contribute?</h4>
+                <p class="text-muted">
+                    We welcome contributions from the community. Check out our GitHub repository!
+                </p>
+                <a href="https://github.com/your-username/transfer-learning-images" target="_blank"
+                    class="btn btn-primary">
+                    <i class="fab fa-github"></i> Contribute on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
