@@ -1,3 +1,4 @@
 data/raw/102flowers.tgz filter=lfs diff=lfs merge=lfs -text
 data/raw/102segmentations.tgz filter=lfs diff=lfs merge=lfs -text
 models/vgg16_flowers102.pth filter=lfs diff=lfs merge=lfs -text
+models/resnet50_flowers102.pth filter=lfs diff=lfs merge=lfs -text
