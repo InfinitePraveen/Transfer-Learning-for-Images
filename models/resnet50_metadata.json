@@ -1,0 +1,15 @@
+{
+    "model_name": "resnet50",
+    "architecture": "ResNet",
+    "num_parameters": 23717030,
+    "num_trainable_parameters": 23717030,
+    "input_size": [
+        3,
+        224,
+        224
+    ],
+    "num_classes": 102,
+    "framework": "PyTorch",
+    "pretrained": "ImageNet",
+    "dataset": "Oxford 102 Flowers"
+}
