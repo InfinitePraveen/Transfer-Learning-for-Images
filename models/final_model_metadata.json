@@ -1,0 +1,30 @@
+{
+    "model_name": "ResNet50",
+    "architecture": "ResNet50",
+    "pretrained": "ImageNet",
+    "dataset": "Oxford 102 Flowers",
+    "num_classes": 102,
+    "input_size": [
+        3,
+        224,
+        224
+    ],
+    "total_parameters": 23717030,
+    "trainable_parameters": 22272102,
+    "training_phases": [
+        {
+            "phase": 1,
+            "epochs": 10,
+            "learning_rate": 0.001,
+            "trainable": "classifier_head"
+        },
+        {
+            "phase": 2,
+            "epochs": 10,
+            "learning_rate": 0.0001,
+            "trainable": "last_two_blocks"
+        }
+    ],
+    "best_test_accuracy": 0.8892502845991218,
+    "final_test_accuracy": 0.8887624003903074
+}
